@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 function InputForm({ setCityName }: { setCityName: React.Dispatch<React.SetStateAction<string>> }) {
   const [inputValue, setInputValue] = useState("");
 
-  function handleClick() {
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
     setCityName(inputValue);
-    console.log(`City name is now ${cityName}`)
   }
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {

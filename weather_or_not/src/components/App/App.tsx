@@ -31,23 +31,14 @@ function App() {
       setWeatherData(data);
       
     }
-    setCityName("London")
     fetchWeatherData();
 
 
   }, [cityName]);
 
-// handleclick(){
-
-//   setCityName("")
-// }
-  //console log the weatherData
   useEffect(() => {
     console.log(weatherData);
   }, [weatherData]);
-
-
-
 
 
   return (
