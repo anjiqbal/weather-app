@@ -1,11 +1,26 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
+import WeatherInfo from '../WeatherInfo/WeatherInfo';
+import InputForm from '../InputForm/InputForm';
+
+export type WeatherData = {
+  main: {
+    temp:number;
+    feels_like:number;
+    temp_min:number;
+    temp_max:number;
+    pressure:number;
+    humidity:number;
+    sea_level:number;
+    grnd_level:number;
+  }
+}
 
 function App() {
 
-  const [cityName, setCityName] = useState("")
-  const [weatherData, setWeatherData] = useState({});
+  const [cityName, setCityName] = useState("London")
+  const [weatherData, setWeatherData] = useState<WeatherData | undefined>();
 
   //call Api by CityName
   useEffect(() => {
@@ -19,6 +34,7 @@ function App() {
     setCityName("London")
     fetchWeatherData();
 
+
   }, [cityName]);
 
 // handleclick(){
@@ -31,9 +47,13 @@ function App() {
   }, [weatherData]);
 
 
+
+
+
   return (
     <div className="App">
-<h1>Weather Or Not...</h1>
+      <InputForm setCityName = {setCityName}/>
+      {weatherData && <WeatherInfo weatherProps = {weatherData} cityName = {cityName} />}
     </div>
   );
 }
