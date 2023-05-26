@@ -3,8 +3,8 @@ import { WeatherData } from "../App/App"
 function WeatherInfo({ weatherProps, cityName, tempUnits }: {weatherProps:WeatherData, cityName:string, tempUnits:string}) {
   // return <p>{JSON.stringify(weatherProps)}</p>
   
-  let temp:number;
-
+  let temp:number = 0;
+  if (weatherProps.main){
   switch (tempUnits) {
     case "C": temp=Math.floor(weatherProps.main.temp - 273.15);
     break;
@@ -13,7 +13,7 @@ function WeatherInfo({ weatherProps, cityName, tempUnits }: {weatherProps:Weathe
     case "F": temp=Math.floor((((weatherProps.main.temp - 273.15)*9)/5)+32);
     break;
     default: temp=Math.floor(weatherProps.main.temp - 273.15);
-  }
+  }}
 
   if (weatherProps.main){
   return (
@@ -22,10 +22,8 @@ function WeatherInfo({ weatherProps, cityName, tempUnits }: {weatherProps:Weathe
   <h1>{cityName}</h1>
   
   <p>{`Temperature is ${temp} Degrees ${tempUnits}`}</p>
-  <p>{`${if(temp) then {temp >= 18
-     ? "Get your shorts on":
-     "Might need a few layers lad"}`
-     }</p>} else {}
+  <p>`{ temp >= 18 ? "Get your shorts on":
+     "Might need a few layers lad"}`</p>
 
 
 
