@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Weather Or Not...</h1>
       <InputForm setCityName = {setCityName} handleChangeUnits = {handleChangeUnits}/>
       {weatherData && <WeatherInfo weatherProps = {weatherData} cityName = {cityName} tempUnits = {tempUnits} />}
     </div>
