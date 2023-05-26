@@ -19,9 +19,15 @@ export type WeatherData = {
 
 function App() {
 
-  const [cityName, setCityName] = useState("London")
+  const [cityName, setCityName] = useState("London");
   const [weatherData, setWeatherData] = useState<WeatherData | undefined>();
+  const [tempUnits, setTempUnits] = useState<string>("C");
 
+  
+
+  function handleChangeUnits (unit:string) {
+      setTempUnits(unit);
+  }
   //call Api by CityName
   useEffect(() => {
     async function fetchWeatherData() {
@@ -43,8 +49,8 @@ function App() {
 
   return (
     <div className="App">
-      <InputForm setCityName = {setCityName}/>
-      {weatherData && <WeatherInfo weatherProps = {weatherData} cityName = {cityName} />}
+      <InputForm setCityName = {setCityName} handleChangeUnits = {handleChangeUnits}/>
+      {weatherData && <WeatherInfo weatherProps = {weatherData} cityName = {cityName} tempUnits = {tempUnits} />}
     </div>
   );
 }

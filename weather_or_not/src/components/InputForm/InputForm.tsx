@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputForm({ setCityName }: { setCityName: React.Dispatch<React.SetStateAction<string>> }) {
+function InputForm({ setCityName, handleChangeUnits }: { setCityName: React.Dispatch<React.SetStateAction<string>>, handleChangeUnits:(unit:string)=> void }) {
   const [inputValue, setInputValue] = useState("");
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
@@ -22,6 +22,9 @@ function InputForm({ setCityName }: { setCityName: React.Dispatch<React.SetState
         onChange={handleChange}
       />
       <button onClick={handleClick}>Enter</button>
+      <button onClick={()=>{handleChangeUnits("C")}}>Celsius</button>
+      <button onClick={()=>{handleChangeUnits("F")}}>Fahrenheit</button>
+      <button onClick={()=>{handleChangeUnits("K")}}>Kelvin</button>
     </div>
   );
 }
