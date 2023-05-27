@@ -1,4 +1,4 @@
-# Hackathon #11 - Recipe Keeper App
+# Hackathon #11 - Weather App
 
 ###### May 2023
 
