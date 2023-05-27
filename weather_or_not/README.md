@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Hackathon #11 - Recipe Keeper App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###### May 2023
 
-## Available Scripts
+A weather app that allows you to check the weather by city name.
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+![Weather app gif](./weather_or_not/assets/weather.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Motivation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For this hackathon we were tasked with building a weather checker app using TypeScript and React that pulled data from https://openweathermap.org/api. At this point it has been a few weeks since we had used React and only our second day using TypeScript and React after a brief introduction the previous day.
 
-### `npm test`
+## Lessons Learned
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Main lessons learned:
 
-### `npm run build`
+- How to describe the data you choose to receive from the API in an alias
+- How to pass props in TypeScript, including functions
+- Ignore the red line errors when working on your code and finish what it is you are doing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Client:** TypeScript, React, CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and Setup Instructions
 
-### `npm run eject`
+You will need `node` and `npm` installed on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone the repo:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`https://github.com/anjiqbal/weather-app`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install the required npm modules:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm install`
 
-## Learn More
+Start the application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Improvements
+
+Potential future improvements:
+
+- Update the weather information to include more detail that may be relevant to the user
+- Allow the user to store cities that they wish to have quick access to
+- Add a dark mode
+
+## Usage
+
+1. Input the city you wish to see the weather for and press the 'Enter' button on your keyboard or press the 'Enter' button on the user interface.
