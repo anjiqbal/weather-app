@@ -11,7 +11,7 @@ function WeatherInfo({
   tempUnits: string;
 }) {
   // return <p>{JSON.stringify(weatherProps)}</p>
-
+  const description: string = weatherProps.weather[0].description;
   let temp: number = 0;
   let minTemp: number = 0;
   let maxTemp: number = 0;
@@ -54,9 +54,12 @@ function WeatherInfo({
 
   if (weatherProps.main) {
     return (
+ 
       <div className="weather-info">
+     
+             
         <h2>{cityName}</h2>
-
+        <h3>{weatherProps.weather[0].description}</h3>
         <p>{`Temperature is ${temp} Degrees ${tempUnits}`}</p>
         <p className="message">
           `
