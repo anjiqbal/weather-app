@@ -18,40 +18,26 @@ function InputForm({
     setInputValue(event.target.value);
   }
 
+  function handleEnter(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      setCityName(inputValue);
+    }
+  }
+
   return (
-    <div className="input-form">
+    <form className="input-form">
       <input
         id="textinput"
         type="text"
         placeholder="Enter your city"
         value={inputValue}
         onChange={handleChange}
+        onKeyDown={handleEnter}
       />
       <button onClick={handleClick}>Enter</button>
-      <div className="buttons">
-        <button
-          onClick={() => {
-            handleChangeUnits("C");
-          }}
-        >
-          Celsius
-        </button>
-        <button
-          onClick={() => {
-            handleChangeUnits("F");
-          }}
-        >
-          Fahrenheit
-        </button>
-        <button
-          onClick={() => {
-            handleChangeUnits("K");
-          }}
-        >
-          Kelvin
-        </button>
-      </div>
-    </div>
+
+    </form>
   );
 }
 
